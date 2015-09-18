@@ -1,5 +1,6 @@
 package io.oasp.gastronomy.restaurant.offermanagement.dataaccess.api;
 
+import io.oasp.gastronomy.restaurant.offermanagement.common.api.WeeklyPeriod;
 import io.oasp.gastronomy.restaurant.offermanagement.common.api.datatype.DayOfWeek;
 
 import javax.persistence.Embeddable;
@@ -13,7 +14,7 @@ import javax.validation.constraints.Min;
  * @author mbrunnli
  */
 @Embeddable
-public class WeeklyPeriodEmbeddable {
+public class WeeklyPeriodEmbeddable implements WeeklyPeriod {
 
   private DayOfWeek startingDay;
 
@@ -22,6 +23,8 @@ public class WeeklyPeriodEmbeddable {
   private DayOfWeek endingDay;
 
   private int endingHour;
+
+  private static final long serialVersionUID = 1L;
 
   /**
    * Returns the {@link DayOfWeek} the period starts.
